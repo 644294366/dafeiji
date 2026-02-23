@@ -1,0 +1,83 @@
+:root {
+  --bg: #0b0f1a;
+  --panel: #111826;
+  --accent: #3af2b5;
+  --danger: #ff4d6d;
+  --text: #e8eef8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: radial-gradient(1200px 800px at 50% -20%, #1a2240, var(--bg));
+  color: var(--text);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+#wrap {
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+#game {
+  background: linear-gradient(180deg, #0b0f1a 0%, #070a12 100%);
+  border: 2px solid #2b3550;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+#hud {
+  width: 480px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--panel);
+  border: 1px solid #2b3550;
+  padding: 10px 12px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  gap: 10px;
+}
+
+.score {
+  color: var(--accent);
+}
+
+.hint {
+  color: #9fb2d6;
+  text-align: right;
+  flex: 1;
+}
+
+#mute {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #2b3550;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+#mute[aria-pressed="true"] {
+  color: var(--danger);
+  border-color: var(--danger);
+}
+
+@media (max-width: 520px) {
+  #game,
+  #hud {
+    width: 92vw;
+  }
+
+  #game {
+    height: auto;
+  }
+}
